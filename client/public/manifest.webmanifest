@@ -1,0 +1,10 @@
+{
+  "name": "My Little Space — Personal Life Dashboard",
+  "short_name": "My Little Space",
+  "description": "A softer kind of organised.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffafc",
+  "theme_color": "#fff8fb",
+  "icons": [{ "src": "/flower.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
