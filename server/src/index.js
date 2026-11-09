@@ -10,6 +10,7 @@ import rateLimit from 'express-rate-limit';
 import { OAuth2Client } from 'google-auth-library';
 
 const app = express();
+app.set('trust proxy', 1);
 const isProduction = process.env.NODE_ENV === 'production';
 const clientOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
 const allowedKeys = new Set(['habits', 'logs', 'entries', 'work', 'cycles', 'dsa']);
