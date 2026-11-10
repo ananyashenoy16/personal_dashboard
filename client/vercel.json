@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://personal-dashboard-app-wrae.onrender.com/api/$1"
+    }
+  ]
+}
