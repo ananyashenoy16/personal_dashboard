@@ -88,3 +88,25 @@
 /* Money tracker */
 .money-summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.money-summary-card{padding:18px;border:1px solid #f0e4ee;border-radius:15px;background:linear-gradient(145deg,#fff,#fff7fb);display:grid;gap:8px;min-width:0}.money-summary-card span{font-size:9px;letter-spacing:1px;font-weight:800;color:#aa94ac}.money-summary-card strong,.home-money-total{font-family:'Playfair Display',serif;font-size:25px;font-weight:500;color:#8e6999;overflow-wrap:anywhere}.money-summary-card small{font-size:10px;color:#aa9cac}.money-calendar-panel{margin-bottom:16px}.money-toolbar{align-items:center}.month-picker-label{display:grid;gap:6px;font-size:9px;letter-spacing:1px;font-weight:800;color:#aa94ac}.month-picker-label input{border:1px solid #eaddea;border-radius:10px;background:#fffafd;padding:9px 12px;color:#80658b;font:inherit;font-size:12px;letter-spacing:0}.money-calendar{max-width:680px;margin:0 auto}.money-weekdays,.money-calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px}.money-weekdays{margin-bottom:7px}.money-weekdays span{text-align:center;padding:7px 0;color:#aa9bad;font-size:11px}.money-calendar-day,.money-empty-day{min-width:0;min-height:65px;border:1px solid #f2e8f0;border-radius:11px;background:#fffafd;color:#806d87;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}.money-calendar-day{cursor:pointer}.money-calendar-day:hover{border-color:#cdb3d9}.money-calendar-day b{font-size:13px}.money-calendar-day small{max-width:100%;font-size:8px;color:#a47b9c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.money-calendar-day.selected{background:#f1e5f5;border:2px solid #a984bd;color:#795394}.money-calendar-day.today:not(.selected){box-shadow:inset 0 0 0 1px #c28eae}.money-calendar-day.has-spend{background-color:#fff4f8}.money-workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}.expense-list,.home-expense-list{display:grid;gap:4px}.expense-row,.home-expense-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f4edf2}.expense-category-icon{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border-radius:12px;background:#fbf0f7;font-size:17px}.expense-description{display:grid;gap:3px;flex:1;min-width:0}.expense-description b{font-size:12px;color:#806d87}.expense-description small{font-size:10px;color:#aa9cac;overflow-wrap:anywhere}.expense-row>strong{font-size:12px;color:#80658b;white-space:nowrap}.expense-row .icon-btn{flex:0 0 auto}.home-money-panel{margin-top:18px}.home-money-panel .panel-head{align-items:center}.home-money-total{font-size:27px}.home-money-empty{font-size:12px;color:#aa9cac;padding:8px 0}.home-expense-row{justify-content:space-between;font-size:11px;color:#8c7b91}.home-expense-row b{color:#80658b}.home-money-panel>.soft-btn{display:inline-flex;align-items:center;gap:6px;margin-top:12px}
 @media(max-width:760px){.money-summary-grid{grid-template-columns:1fr;gap:8px}.money-summary-card{grid-template-columns:1fr auto;align-items:center;padding:13px}.money-summary-card span,.money-summary-card small{grid-column:1}.money-summary-card strong{grid-column:2;grid-row:1/3;text-align:right;font-size:21px}.money-workspace{grid-template-columns:1fr}.money-calendar-days,.money-weekdays{gap:3px}.money-calendar-day,.money-empty-day{min-height:53px;border-radius:8px}.money-calendar-day small{font-size:7px}.money-toolbar{align-items:flex-start;flex-direction:column}.month-picker-label{width:100%}.month-picker-label input{width:100%}}
+
+/* Dashboard: arrange all 6 cards in 3 columns */
+.feature-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-card,
+.feature-card:nth-child(4),
+.feature-card:nth-child(5) {
+  grid-column: auto;
+}
+
+/* Keep the dashboard responsive on smaller screens */
+@media (max-width: 760px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
