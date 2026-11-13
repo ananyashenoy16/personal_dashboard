@@ -12,7 +12,7 @@ import { OAuth2Client } from 'google-auth-library';
 const app = express();
 const isProduction = process.env.NODE_ENV === 'production';
 const clientOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
-const allowedKeys = new Set(['habits', 'logs', 'entries', 'work', 'cycles', 'dsa', 'expenses', 'yearstory']);
+const allowedKeys = new Set(['habits', 'logs', 'entries', 'work', 'cycles', 'dsa', 'expenses', 'yearstory', 'journaldays', 'improvement', 'todo']);
 const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 app.set('trust proxy', isProduction ? 1 : false);
