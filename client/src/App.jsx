@@ -171,7 +171,15 @@ function App(){
  const predicted=latestCycle?dateLabel(shiftDate(new Date(latestCycle.startDate+'T12:00:00'),averageCycleLength||28)):'Not enough data yet';
  const pickPeriodDate=date=>{if(calendarPickMode==='startDate'){setCycleForm(p=>({...p,startDate:date,endDate:p.endDate&&p.endDate<date?'':p.endDate}));setCalendarPickMode('endDate')}else{if(date<cycleForm.startDate){setCycleForm(p=>({...p,startDate:date,endDate:''}));setCalendarPickMode('endDate')}else{setCycleForm(p=>({...p,endDate:date}));setCalendarPickMode('startDate')}}};
  const monthName=(year,month)=>new Date(year,month,1).toLocaleDateString('en-US',{month:'long'});
- const monthDates=(year,month)=>{const first=new Date(year,month,1),offset=first.getDay(),count=new Date(year,month+1,0).getDate();return [...Array(offset).fill(null),...Array.from({length:count},(_,i)=>new Date(year,month,i+1))]};
+ function monthDates(year, month) {
+  const first = new Date(year, month, 1);
+  const offset = first.getDay();
+  const count = new Date(year, month + 1, 0).getDate();
+  return [
+    ...Array(offset).fill(null),
+    ...Array.from({ length: count }, (_, i) => new Date(year, month, i + 1)),
+  ];
+}
  const moneyDays=monthDates(moneyMonthDate.getFullYear(),moneyMonthDate.getMonth());
  const loggedPeriodDate=date=>sortedCycles.some(c=>date>=c.startDate&&date<=(c.endDate||c.startDate));
  const finishAuthentication=(authenticatedUser,shouldImport)=>{setImportOnLogin(Boolean(shouldImport));setSyncError('');setUser(authenticatedUser)};
